@@ -16,21 +16,14 @@ export class UsuariosService {
 
     let params = new HttpParams().append('page', '1');
     params = params.append('nombre', 'Andres Alba');
-    // const headers = new HttpHeaders({
-    //   'Token-usuario': 'ASDASDAS45456456454SD'
-    // });
 
-    return this.http.get('https://reqres.in/api/user', {
+
+    return this.http.get('https://reqresfsdfs.in/api/user', {
       params
     }).pipe(
       map( resp => {
         return resp['data'];
       }),
-      catchError( err => {
-        console.log('sucedio un error');
-        console.warn(err);
-        return throwError('Error personalizado');
-      } )
     ); // ponemos return porque se requiere suscribirse en ptro lugar
   }
 }
